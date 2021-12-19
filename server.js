@@ -13,6 +13,7 @@ app.get('/api/notes', (req, res) => {
     res.json(totalNotes.slice(1));
 });
 
+//main route to show landing page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
@@ -21,10 +22,12 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
+//route to handle every not match url
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+//below function handles the note from body and store it in the db.json file
 function makeNote(body, notesList) {
     const newNote = body;
     if (!Array.isArray(notesList))
@@ -49,6 +52,8 @@ app.post('/api/notes', (req, res) => {
     res.json(newNote);
 });
 
+
+//below function deletes a particular note by selecting it from the notesList and then storing it again in the db.json file
 function deleteParticularNote(id, notesList) {
     for (let i = 0; i < notesList.length; i++) {
         let note = notesList[i];
