@@ -4,6 +4,7 @@ let saveBtn;
 let newNoteBtn;
 let noteList;
 
+//below code is to get and store the references of the following elements
 if (window.location.pathname === '/notes') {
   newNoteBtn = document.querySelector('.new-note');
   noteContent = document.querySelector('.note-textarea');
@@ -12,6 +13,7 @@ if (window.location.pathname === '/notes') {
   noteHeading = document.querySelector('.note-title');
 }
 
+//below function sends the data recieved for saving
 const saveNoteAPI = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -23,6 +25,7 @@ const saveNoteAPI = (note) =>
 
 let currentNote = {};
 
+//below function fetch all the notes from the backend
 const fetchNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
@@ -31,6 +34,7 @@ const fetchNotes = () =>
     },
   });
 
+//below function display the current active note
 const displayActiveNote = () => {
   saveBtn.style.display = 'none';
 
@@ -47,6 +51,7 @@ const displayActiveNote = () => {
   }
 };
 
+//below function handles the note saving and sends the data to saveNoteApi method for futher process
 const handleNoteSave = () => {
   const newNote = {
     title: noteHeading.value,
@@ -58,6 +63,7 @@ const handleNoteSave = () => {
   });
 };
 
+//below function calls the delete api for removing a partucliar note
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
