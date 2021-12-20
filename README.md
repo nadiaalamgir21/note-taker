@@ -5,6 +5,10 @@
 Is a note taking app to take the notes of the user and save the data in server in a file.
   
 
+# Link to deployed application
+
+https://nadia-note-taker.herokuapp.com/  
+
 ## Built With:
 
 * HTML
