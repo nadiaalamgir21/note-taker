@@ -2,7 +2,7 @@
   
 
 # Note-taker
-Is a note taking app to take the notes of the user and save the data in server in a file.
+Is a note taking app which is meticulously designed for the benefit of users who would want to log their important data in the app to store for further use.
   
 
 # Link to deployed application
